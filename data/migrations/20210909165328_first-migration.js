@@ -8,6 +8,7 @@ exports.up = async function(knex) {
     })
     .createTable('species', table => {
       table.increments('species_id')
+      table.string('species_name')
     })
     .createTable('animals', table => {
       table.increments('animal_id')
