@@ -25,7 +25,13 @@ exports.up = async function (knex) {
       table.increments('zoo_animal_id')
       table.timestamps(true, true)
 
-      // you
+      table.integer('animal_id')
+        .unsigned()
+        .notNullable()
+        .references('animal_id')
+        .inTable('animals')
+        .onDelete('RESTRICT')
+        .onUpdate('RESTRICT')
     })
 };
 
