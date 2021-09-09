@@ -1,10 +1,18 @@
 
 exports.up = async function(knex) {
   await knex.schema
-    .createTable('zoos')
-    .createTable('species')
-    .createTable('animals')
-    .createTable('zoo_animals')
+    .createTable('zoos', table => {
+      
+    })
+    .createTable('species', table => {
+      
+    })
+    .createTable('animals', table => {
+      
+    })
+    .createTable('zoo_animals', table => {
+      
+    })
 };
 
 exports.down = async function(knex) {
