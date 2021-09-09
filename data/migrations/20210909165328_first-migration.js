@@ -1,5 +1,5 @@
 
-exports.up = async function(knex) {
+exports.up = async function (knex) {
   await knex.schema
     .createTable('zoos', table => {
       table.increments('zoo_id')
@@ -13,14 +13,17 @@ exports.up = async function(knex) {
     .createTable('animals', table => {
       table.increments('animal_id')
       table.string('animal_name', 150).notNullable()
-      table.integer('')
+      table.integer('species_id')
+        .unsigned()
+        .notNullable()
+        .references('species_id')
     })
     .createTable('zoo_animals', table => {
       table.increments('zoo_animal_id')
     })
 };
 
-exports.down = async function(knex) {
+exports.down = async function (knex) {
   // SO FREAKIN' EASY TO GET WRONG
   await knex.schema
     .dropTableIfExists('zoo_animals')
