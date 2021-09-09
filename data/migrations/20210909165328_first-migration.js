@@ -35,7 +35,7 @@ exports.up = async function (knex) {
 
       table.integer('zoo_id')
         .unsigned()
-        .notNullable
+        .notNullable()
         .references('zoo_id')
         .inTable('zoos')
         .onDelete('RESTRICT')
