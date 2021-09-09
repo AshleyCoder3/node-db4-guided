@@ -32,6 +32,14 @@ exports.up = async function (knex) {
         .inTable('animals')
         .onDelete('RESTRICT')
         .onUpdate('RESTRICT')
+
+        table.integer('zoo_id')
+        .unsigned()
+        .notNullable
+        .references('zoo_id')
+        .inTable('zoos')
+        .onDelete('RESTRICT')
+        .onUpdate('RESTRICT')
     })
 };
 
