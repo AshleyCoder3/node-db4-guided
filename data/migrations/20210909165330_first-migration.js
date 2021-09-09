@@ -25,12 +25,12 @@ exports.up = async function (knex) {
         })
 
         .createTable('zoo_animals', table => {// need upper table to work
-            table.increments('zoo_ animals_id');
+            table.increments('zoo_ animal_id');
             table.timestamps(true, true); //creates columns for time stamps
-            table.integer('animals_id')
+            table.integer('animal_id')
                 .unsigned()//no negative numbers
                 .notNullable()
-                .references('animals_id')// what were getting from other table
+                .references('animal_id')// what were getting from other table
                 .inTable('animals') //table we're getting it from
                 .onDelete('CASCADE')
                 .onUpdate('CASCADE');
