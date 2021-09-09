@@ -8,6 +8,7 @@ exports.up = async function(knex) {
 };
 
 exports.down = async function(knex) {
+  // SO FREAKIN' EASY TO GET WRONG
   await knex.schema
     .dropTableIfExists()
     .dropTableIfExists()
