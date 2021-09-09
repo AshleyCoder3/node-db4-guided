@@ -23,6 +23,7 @@ exports.up = async function (knex) {
     })
     .createTable('zoo_animals', table => {
       table.increments('zoo_animal_id')
+      table.timestamps(true, true)
     })
 };
 
